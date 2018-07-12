@@ -28,6 +28,13 @@ socket.on('chat', function(data){
     output.innerHTML += '<p><strong>' + data.username + ': </strong>' + data.message + '</p>';
 });
 
+socket.on('ichat', function(data){
+  for(var i = 0; i<=data.length ; i++)
+    {
+      output.innerHTML += '<p><strong>' + data[i].name + ': </strong>' + data[i].message + '</p>';
+    }
+});
+
 socket.on('typing', function(data){
     feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
 });
